@@ -13,12 +13,22 @@
 		<a-scene embedded arjs="debugUIEnabled: false" vr-mode-ui="enabled: false">
 			<a-assets>
 				<img src="img/hello.png" id="hello">
+				<a-asset-item id="box" src="model/box.glb"></a-asset-item>
+				<a-asset-item id="human" src="model/human.glb"></a-asset-item>
 			</a-assets>
 			<!-- a-markerのtypeにpatternを設定, 作ったpattファイルをurlにを指定 -->
 			<a-marker type="pattern" url="qr.patt">
 				<!-- 赤い立方体を表示 -->
-				<a-box position="0 0.5 0" width="0.5" height="0.5" depth="0.5" color="red"></a-box>
-				<a-image src="#hello" width="2" height="2" rotation="-90 0 0"></a-image>
+				<!--<a-box position="0 0.5 0" width="0.5" height="0.5" depth="0.5" color="red"></a-box>-->
+				<!--<a-entity>
+					<a-image src="#hello" width="2" height="2" rotation="-90 0 0"></a-image>
+					<a-animation attribution="rotation" to="0 360 0" dur="4000" repeat="indefinite" easing="linear"></a-animation>
+				</a-entity>
+				<a-gltf-model src="#box"></a-gltf-model>
+				<a-box position="0 0.5 0" wireframe="true"></a-box>
+				-->
+				<a-gltf-model src="#human"></a-gltf-model>
+				<a-text value="Hello Marx!"></a-text>
 			</a-marker>
 			<a-entity camera></a-entity>
 		</a-scene>
